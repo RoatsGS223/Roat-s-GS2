@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roat's GS💾</title>
+  <link rel="icon" href="pikachu.jpg" type="image/jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Roat's GS💾</a>
+    <a href="acompanhar.html" class="acompanhar-btn">📦 Acompanhar Pedido</a>
+  </header>
+
+  <section class="banner">
+    <h1>Bem-vindo à parte de peças da Roat's GS</h1>
+    <p>Explore as melhores peças com apenas um clique.</p>
+  </section>
+
+  <main>
+    <div class="products">
+     <div class="product">
+  <h3>rx 580 2048SP 8GB MAXSUN</h3>
+  <p class="product-price">R$ 750,00</p>
+  <p class="product-description">Um clássico do pc barato.</p>
+  <button onclick="addToCart('RX580', 750)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>GTX 1660 TI 6GB GALAX</h3>
+  <p class="product-price">R$ 1750,00</p>
+  <p class="product-description">Placa de video linda.</p>
+  <button onclick="addToCart('GTX1660TI', 1750)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Processador ryzen 5500</h3>
+  <p class="product-price">R$ 500,00</p>
+  <p class="product-description">O melhor processador ryzen.</p>
+  <button onclick="addToCart('R5500', 500)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Placa mae msi a520m A-PRO</h3>
+  <p class="product-price">R$ 500,00</p>
+  <p class="product-description">Placa mae perfeita pra pc barato sem explodir.</p>
+  <button onclick="addToCart('a520m', 500)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Placa mae msi b550m VHI-PRO-WIFI</h3>
+  <p class="product-price">R$ 750,00</p>
+  <p class="product-description">Placa mae perfeita.</p>
+  <button onclick="addToCart('B550M', 750)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Gabinete aigo dk 100</h3>
+  <p class="product-price">R$ 195,00</p>
+  <p class="product-description">Gabinete aquario lindo mini.</p>
+  <button onclick="addToCart('DK100', 195)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Gabinete Mancer cv 500L</h3>
+  <p class="product-price">R$ 230,00</p>
+  <p class="product-description">Gabinete aquario lindo grande.</p>
+  <button onclick="addToCart('CV500L', 230)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Processador i5 3330</h3>
+  <p class="product-price">R$ 150,00</p>
+  <p class="product-description">Processador baratin pra office.</p>
+  <button onclick="addToCart('I5 3330', 150)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>     SSD ADATA 240 GB     </h3>
+  <p class="product-price">R$ 125,00</p>
+  <p class="product-description">O pc liga rapidao com esse.</p>
+  <button onclick="addToCart('SSD ADATA 240', 125.00)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Placa mae H61</h3>
+  <p class="product-price">R$ 140,00</p>
+  <p class="product-description">placa mae baratinha pro office.</p>
+  <button onclick="addToCart('h61', 140.00)">Adicionar</button>
+</div>
+
+    </div>
+  </main>
+
+  <div class="floating-cart" id="cart-icon" onclick="toggleCart()">
+    🛒
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
+
+  <div class="cart-panel" id="cart-panel">
+    <h3>🛒 Seu Carrinho</h3>
+    <div class="cart-items" id="cart-items">
+      <p>O carrinho está vazio.</p>
+    </div>
+    <div class="cart-buttons">
+      <button class="continue-btn" onclick="toggleCart()">Continuar Comprando</button>
+      <button class="checkout-btn" onclick="window.location.href='finalizar.html'">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <footer>
+  &copy; 2025 Livraria do Saber — Todos os direitos reservados.
+</footer>
+
+</body>
+</html>

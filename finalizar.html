@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Finalizar Compra - Livraria do Saber</title>
+  <link rel="stylesheet" href="style-finalizar.css" />
+  
+</head>
+<body>
+
+  <header>
+    <a href="index.html">Roat's GS🖥️</a>
+  </header>
+
+  <main>
+    <h2>Resumo do Pedido</h2>
+    <div class="cart-summary" id="cart-summary">
+      <!-- Itens do carrinho aparecerão aqui -->
+    </div>
+
+    <h2>Método de Pagamento</h2>
+    <form id="payment-form" novalidate>
+      <label class="payment-option">
+        <input type="radio" name="paymentMethod" value="credit" required />
+        💳Cartão de Crédito
+      </label>
+      <label class="payment-option">
+        <input type="radio" name="paymentMethod" value="boleto" />
+        📜Boleto Bancário
+      </label>
+      <label class="payment-option">
+        <input type="radio" name="paymentMethod" value="pix" />
+        📱PIX
+      </label>
+
+      <div class="card-details" id="card-details">
+        <input
+          type="text"
+          id="card-number"
+          name="card-number"
+          placeholder="Número do Cartão"
+          maxlength="19"
+          autocomplete="cc-number"
+          pattern="\d{13,19}"
+          title="Digite o número do cartão (13 a 19 dígitos)"
+        />
+        <input
+          type="text"
+          id="card-name"
+          name="card-name"
+          placeholder="Nome no Cartão"
+          autocomplete="cc-name"
+        />
+        <input
+          type="text"
+          id="card-expiry"
+          name="card-expiry"
+          placeholder="MM/AA"
+          maxlength="5"
+          pattern="(0[1-9]|1[0-2])\/\d{2}"
+          title="Formato MM/AA"
+          autocomplete="cc-exp"
+        />
+        <input
+          type="text"
+          id="card-cvv"
+          name="card-cvv"
+          placeholder="CVV"
+          maxlength="4"
+          pattern="\d{3,4}"
+          title="Código de segurança"
+          autocomplete="cc-csc"
+        />
+        <select id="card-installments" name="card-installments" aria-label="Parcelas">
+          <option value="1">1x - À vista</option>
+          <option value="2">2x sem juros</option>
+          <option value="3">3x sem juros</option>
+          <option value="4">4x sem juros</option>
+          <option value="5">5x sem juros</option>
+        </select>
+      </div>
+
+      <button type="submit" class="confirm-btn">Confirmar Pedido</button>
+    </form>
+  </main>
+
+  <div id="confirmation-message" class="confirmation-message">
+    Compra confirmada! Obrigado por comprar conosco.
+  </div>
+
+  <script>
+    function formatPrice(value) {
+      return value.toFixed(2).replace('.', ',');
+    }
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartSummary = document.getElementById('cart-summary');
+    const confirmationMsg = document.getElementById('confirmation-message');
+
+    if (cart.length === 0) {
+      cartSummary.innerHTML = '<p>O carrinho está vazio.</p>';
+    } else {
+      let html = '';
+      let total = 0;
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        html += `
+          <div class="cart-item">
+            <strong>${item.name}</strong><br />
+            Quantidade: ${item.quantity}<br />
+            Preço unitário: R$ ${formatPrice(item.price)}<br />
+            Total: R$ ${formatPrice(itemTotal)}
+          </div>
+        `;
+      });
+      html += `<div class="total">Valor total: R$ ${formatPrice(total)}</div>`;
+      cartSummary.innerHTML = html;
+    }
+
+    const paymentRadios = document.querySelectorAll('input[name="paymentMethod"]');
+    const cardDetails = document.getElementById('card-details');
+
+    paymentRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radio.value === 'credit' && radio.checked) {
+          cardDetails.classList.add('show');
+          Array.from(cardDetails.querySelectorAll('input, select')).forEach(el => el.required = true);
+        } else {
+          cardDetails.classList.remove('show');
+          Array.from(cardDetails.querySelectorAll('input, select')).forEach(el => el.required = false);
+        }
+      });
+    });
+
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      if(cart.length === 0) {
+        confirmationMsg.textContent = 'Seu carrinho está vazio!';
+        confirmationMsg.style.backgroundColor = '#dc3545'; // vermelho alerta
+        confirmationMsg.classList.add('show');
+        setTimeout(() => confirmationMsg.classList.remove('show'), 3500);
+        return;
+      }
+
+      if(!form.reportValidity()) {
+        return;
+      }
+
+      localStorage.removeItem('cart');
+      window.location.href = 'confirmado.html';
+    });
+  </script>
+<footer>
+  &copy; 2025 Roat GS — Todos os direitos reservados.
+</footer>
+
+</body>
+</html>

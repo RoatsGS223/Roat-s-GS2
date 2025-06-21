@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acompanhar Pedido</title>
+  <link rel="icon" href="Roat’s GS.png" type="image/jpg" />
+  <link rel="stylesheet" href="style-acompanhar.css" />
+</head>
+<body>
+
+  <main>
+    <div class="container">
+      <h1>📦 Acompanhar Pedido</h1>
+      <p>Digite o código do pedido para ver o status:</p>
+
+      <input type="text" id="codigoPedido" placeholder="Ex: PED123456" />
+      <button onclick="verificarStatus()">Ver Status</button>
+
+      <div id="resultado" class="resultado"></div>
+
+      <div class="back-container">
+        <a href="Peças.html" class="back-btn">⬅️Voltar para Peças💽</a>
+        <a href="Consoles.html" class="back-btn">Voltar para Consoles🎮➡️</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Roat's GS — Todos os direitos reservados.
+  </footer>
+
+  <script>
+  function verificarStatus() {
+    const codigo = document.getElementById('codigoPedido').value.trim().toUpperCase();
+    const resultado = document.getElementById('resultado');
+
+    if (codigo === "") {
+      resultado.innerHTML = `<p class="status-erro">Por favor, insira um código de pedido válido.</p>`;
+    } else if (codigo === "77661010BA") {
+      resultado.innerHTML = `
+        <p><strong>Código:</strong> ${codigo}</p>
+        <p class="status-entregue">Status: Pedido entregue com sucesso!</p>
+        <p>Data de entrega: 21/06/2025</p>
+      `;
+    } else if (codigo === "CTRLPLAY2018") {
+      resultado.innerHTML = `
+        <p><strong>Código:</strong> ${codigo}</p>
+        <p class="status-em-transito">Status: Em trânsito — Chegando em breve!</p>
+        <p>Previsão de entrega: 30/06/2025</p>
+      `;
+    } else {
+      resultado.innerHTML = `
+        <p><strong>Código:</strong> ${codigo}</p>
+        <p class="status-erro">Não encontramos esse pedido. Verifique o código.</p>
+      `;
+    }
+
+    resultado.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

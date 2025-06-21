@@ -1,0 +1,213 @@
+/* Remove barra de rolagem horizontal e margem/padding */
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9fb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background-color: #ffe600ea;
+  width: 100%;
+  padding: 20px 40px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Main content */
+main {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  flex-grow: 1;
+  color: #333;
+}
+
+h2 {
+  color: #ffe600ea;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.cart-summary {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 14px 0;
+  font-size: 1rem;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.total {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #007f8c;
+  text-align: right;
+}
+
+/* Form */
+form {
+  background: white;
+  padding: 30px 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  position: relative;
+}
+
+label.payment-option {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #444;
+  font-size: 1.05rem;
+  user-select: none;
+}
+
+label.payment-option input {
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: #ffe600ea;
+  transform: scale(1.2);
+  vertical-align: middle;
+}
+
+.card-details {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ffe600ea;
+  border-radius: 10px;
+  background-color: #fffbd7ea;
+  display: none;
+  animation: slideFadeIn 0.4s ease forwards;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-details.show {
+  display: block;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #ffe600ea;
+  box-shadow: 0 0 8px rgba(0,127,140,0.3);
+}
+
+button.confirm-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background-color:  #ffe600ea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.confirm-btn:hover {
+  background-color: #b3a100ea;
+}
+
+/* Mensagem de confirmação */
+.confirmation-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: #28a745;
+  color: white;
+  padding: 30px 40px;
+  border-radius: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(40,167,69,0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 9999;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.confirmation-message.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Footer */
+footer {
+  background-color: #ffe600ea;
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 -3px 8px rgba(0, 127, 140, 0.3);
+  letter-spacing: 0.05em;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  margin-top: auto;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+footer:hover {
+  background-color: #ac9a00ea;
+  cursor: default;
+}

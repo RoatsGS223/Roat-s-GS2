@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roat's GS🖱️</title>
+  <link rel="icon" href="Roat’s GS.png" type="image/jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Roat's GS🖥️</a>
+    <a href="acompanhar.html" class="acompanhar-btn">📦 Acompanhar Pedido</a>
+  </header>
+
+  <section class="banner">
+    <h1>Bem vindo a parte de Consoles da Roat GS!</h1>
+    <p>Explore os melhores consoles com apenas um clique.</p>
+  </section>
+
+  <main>
+    <div class="products">
+    <div class="product">
+  <h3>Ps4</h3>
+  <p class="product-price">R$ 1500,00</p>
+  <p class="product-description">um grande console para aproveitar jogas da antiga geraçao.</p> <center> <img src="download.png" width = "80" height = "80"></center>
+  <button onclick="addToCart('PS4', 1500.00)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Xbox 360</h3>
+  <p class="product-price">R$ 750,50</p>
+  <p class="product-description">Classico da infancia de alguns e com desbloqueio por pendrive.</p>
+  <button onclick="addToCart('X360', 750.50)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Ps1</h3>
+  <p class="product-price">R$ 200,75</p>
+  <p class="product-description">um bom console pra coleçao de veios da casa.</p>
+  <button onclick="addToCart('Ps1', 200.75)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Game boy</h3>
+  <p class="product-price">R$ 150,00</p>
+  <p class="product-description">Esse sobrevive ate a explosao ou uma tartaruga gigante.</p>
+  <button onclick="addToCart('GB', 150.00)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Ps2</h3>
+  <p class="product-price">R$ 250,00</p>
+  <p class="product-description">o mais honrado de todos os tempo.</p>
+  <button onclick="addToCart('Ps2', 250.00)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Nintendo Switch 2</h3>
+  <p class="product-price">R$ 4500,00</p>
+  <p class="product-description">Haha vendeu mais que a valve.</p>
+  <button onclick="addToCart('NS 2', 4500.00)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Xbox Rog ally[PRE-VENDA]</h3>
+  <p class="product-price">R$ 7000</p>
+  <p class="product-description">GOLPE BAIXO.</p>
+  <button onclick="addToCart('XBX', 7000.00)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Ps3</h3>
+  <p class="product-price">R$ 750,00</p>
+  <p class="product-description">Eca gatilhos escorregadios.</p>
+  <button onclick="addToCart('ps3', 750.00)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>New 3ds XL</h3>
+  <p class="product-price">R$ 1000,00</p>
+  <p class="product-description">melhor portatil na opniao de muitos.</p>
+  <button onclick="addToCart('3DS', 1000.00)">Adicionar</button>
+</div>
+
+<div class="product">
+  <h3>Xbox series X</h3>
+  <p class="product-price">R$ 4000,00</p>
+  <p class="product-description">Golpe baixo versao geladeira.</p>
+  <button onclick="addToCart('XBXX', 4000.00)">Adicionar</button>
+</div>
+
+    </div>
+  </main>
+
+  <div class="floating-cart" id="cart-icon" onclick="toggleCart()">
+    🛒
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
+
+  <div class="cart-panel" id="cart-panel">
+    <h3>🛒 Seu Carrinho</h3>
+    <div class="cart-items" id="cart-items">
+      <p>O carrinho está vazio.</p>
+    </div>
+    <div class="cart-buttons">
+      <button class="continue-btn" onclick="toggleCart()">Continuar Comprando</button>
+      <button class="checkout-btn" onclick="window.location.href='finalizar.html'">Finalizar Compra</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <footer>
+  &copy; 2025 Roat's GS — Todos os direitos reservados.
+</footer>
+
+</body>
+</html>
