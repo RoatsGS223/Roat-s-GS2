@@ -76,6 +76,28 @@ footer {
 }
 
 footer:hover {
+
+  
   background-color: #b4a40e;
   cursor: default;
 }
+
+/* Modo escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+/* Links */
+body.dark-mode a {
+    color: #66b2ff;
+}
+
+/* Seções, cards, containers */
+body.dark-mode .card,
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: #eaeaea;
+}
+
