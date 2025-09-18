@@ -1,11 +1,9 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9fb;
+  background-color: #f4f4f7;
+  color: #222;
   margin: 0;
   
-  background-color: #f4f4f7; /* cinza bem claro */
-  color: #222; /* texto mais escuro pra contraste */
-  font-family: Arial, sans-serif;
 }
 
 header {
@@ -259,4 +257,24 @@ footer:hover {
   background-color: #b3a100ea;
   cursor: default;
 }
+
+/* Modo escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+/* Links */
+body.dark-mode a {
+    color: #66b2ff;
+}
+
+/* Seções, cards, containers */
+body.dark-mode .card,
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: #eaeaea;
+}
+
 
