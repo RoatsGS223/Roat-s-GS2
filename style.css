@@ -2,6 +2,10 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f9f9fb;
   margin: 0;
+  
+  background-color: #f4f4f7; /* cinza bem claro */
+  color: #222; /* texto mais escuro pra contraste */
+  font-family: Arial, sans-serif;
 }
 
 header {
@@ -255,3 +259,4 @@ footer:hover {
   background-color: #b3a100ea;
   cursor: default;
 }
+
